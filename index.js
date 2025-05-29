@@ -1,4 +1,4 @@
-import { dates } from "./utils/dates";
+import { dates } from "./utils/dates.js";
 
 const tickersArr = [];
 
@@ -8,6 +8,7 @@ generateReportBtn.addEventListener("click", fetchStockData);
 
 document.getElementById("ticker-input-form").addEventListener("submit", (e) => {
   e.preventDefault();
+
   const tickerInput = document.getElementById("ticker-input");
   if (tickerInput.value.length > 2) {
     generateReportBtn.disabled = false;
