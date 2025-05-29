@@ -1,4 +1,4 @@
-import { dates } from "./utils/dates.js";
+import { dates } from "./Stock-Predictor-AI-App/src/utils/dates.js";
 
 const tickersArr = [];
 
