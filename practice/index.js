@@ -45,6 +45,7 @@ const response = await openai.chat.completions.create({
   model: "gpt-4",
   messages: messages,
   max_tokens: 16,
+  temperature: 1,
 });
 
 console.log(response.choices[0].message.content);
