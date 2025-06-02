@@ -64,7 +64,31 @@ async function fetchStockData() {
 }
 
 async function fetchReport(data) {
-  /** AI goes here **/
+  const message = [
+    {
+      role: "system",
+      content:
+        "You are expert in stock and will predict the accurate stock report",
+    },
+    {
+      role: "user",
+      content: data,
+    },
+  ];
+  try {
+    const openai = new OpenAI({
+      dangerouslyAllowBrowser: true,
+    });
+
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5 turbo",
+      messages: message,
+    });
+
+    renderReport(response.choices[0].message.content);
+  } catch (e) {
+    console.log(`Error ${e}`);
+  }
 }
 
 function renderReport(output) {
