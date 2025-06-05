@@ -18,10 +18,10 @@ async function generateImage(prompt) {
     n: 1, //default 1
     size: "1024x1024",
     style: "vivid",
-    response_format: "url",
+    response_format: "b64_json",
   });
   console.log(response);
-  outputImg.innerHTML = `<img src="" alt="The Image API Failed">`;
+  outputImg.innerHTML = `<img src="data:image/png;base64,${response.data[0].b64_json}" alt="The Image API Failed">`;
 }
 
 //A 16th-century woman with long brown hair standing in front of a green vista with cloudy skies. She's looking at the viewer with a faint smile on her lips.
