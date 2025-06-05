@@ -16,6 +16,9 @@ async function generateImage(prompt) {
     model: "dall-e-3", // default dall-e-2
     prompt: prompt, //required
     n: 1, //default 1
+    size: "1024x1024",
+    style: "vivid",
+    response_format: "url",
   });
   console.log(response);
   outputImg.innerHTML = `<img src="" alt="The Image API Failed">`;
