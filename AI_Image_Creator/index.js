@@ -12,6 +12,11 @@ document.getElementById("submit-btn").addEventListener("click", () => {
 });
 
 async function generateImage(prompt) {
+  const response = await openai.images.generate({
+    model: "dall-e-3", // default dall-e-2
+    prompt: prompt, //required
+    n: 1, //default 1
+  });
   console.log(response);
   outputImg.innerHTML = `<img src="" alt="The Image API Failed">`;
 }
