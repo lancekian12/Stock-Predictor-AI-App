@@ -8,6 +8,7 @@ async function main() {
   // Relevant for both inputs and outputs
   const completion = await openai.moderations.create({
     input: "I hate you!",
+    user: "user_123432423",
   });
   const { flagged, categories } = completion.results[0];
   console.log("flagged", flagged);
