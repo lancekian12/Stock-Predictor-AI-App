@@ -13,9 +13,9 @@ async function main() {
   console.log("flagged", flagged);
   console.log("categories", categories);
 
-  //   if (flagged) {
-  //       renderWarning(categories);
-  //   }
+  if (flagged) {
+    renderWarning(categories);
+  }
 }
 
 main();
